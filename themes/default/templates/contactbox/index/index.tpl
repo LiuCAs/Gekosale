@@ -70,7 +70,7 @@
 			{{ forms.hidden(form.children.__csrf) }}
 			<div class="form-actions form-actions-clean">
 				<div class="row-fluid">
-					<button type="submit" class="btn btn-large btn-primary">Wyślij wiadomość</button>
+					<button type="submit" class="btn btn-large btn-primary">{% trans %}TXT_SEND_MESSAGE{% endtrans %}</button>
 				</div>
 			</div>
 		</fieldset>
