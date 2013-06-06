@@ -30,15 +30,15 @@
     </script>
 {% endblock %}	
 {% block content %}
-<h2><img src="{{ DESIGNPATH }}_images_panel/icons/modules/desktop.png" alt=""/>Statystyki produktów</h2>
+<h2><img src="{{ DESIGNPATH }}_images_panel/icons/modules/desktop.png" alt=""/>{% trans %}TXT_STATSPRODUCTS{% endtrans %}</h2>
 <div class="block" id="desktop">
 	<div class="simple-stats layout-two-columns">
 		<div class="column narrow">
 			<dl class="stats-summary">
-				<dt>Produktów w sklepie</dt><dd>{{ summaryStats.totalproducts }}</dd>
-				<dt>Średnia marża</dt><dd>{{ summaryStats.averagemargin }}%</dd>
-				<dt>Najniższa marża</dt><dd>{{ summaryStats.minmargin }}%</dd>
-				<dt>Najwyższa marża</dt><dd>{{ summaryStats.maxmargin }}%</dd>
+				<dt>{% trans %}TXT_PRODUCT_IN_SHOP{% endtrans %}</dt><dd>{{ summaryStats.totalproducts }}</dd>
+				<dt>{% trans %}TXT_PRODUCT_MARGIN_AVERAGE{% endtrans %}</dt><dd>{{ summaryStats.averagemargin }}%</dd>
+				<dt>{% trans %}TXT_PRODUCT_MARGIN_LOWEST{% endtrans %}</dt><dd>{{ summaryStats.minmargin }}%</dd>
+				<dt>{% trans %}TXT_PRODUCT_MARGIN_HIGHEST{% endtrans %}</dt><dd>{{ summaryStats.maxmargin }}%</dd>
 			</dl>
 		</div>
 		<div class="column wide">
