@@ -4061,6 +4061,10 @@
     <field name="translation">Nie masz jeszcze konta w naszym sklepie?</field>
   </row>
   <row>
+    <field name="name">TXT_DONT_WAIT</field>
+    <field name="translation">Nie czekaj i dodaj do niego produkty z naszej oferty!</field>
+  </row>
+  <row>
     <field name="name">TXT_DO_REFUND</field>
     <field name="translation"></field>
   </row>
@@ -5252,6 +5256,10 @@
     <field name="name">TXT_HISTORY_ORDERS</field>
     <field name="translation">Zobacz również historię zrealizowanych zamówień</field>
   </row>
+  <row>
+    <field name="name">TXT_HISTORY_ORDERS_BACK</field>
+    <field name="translation">Wróć do historii zamówień</field>
+  </row>  
   <row>
     <field name="name">TXT_HOME_PAGE</field>
     <field name="translation">Strona główna sklepu</field>
@@ -7241,6 +7249,10 @@
     <field name="translation">Rodzaj notatki</field>
   </row>
   <row>
+    <field name="name">TXT_NOTES_ADD</field>
+    <field name="translation">Dodaj notkę</field>
+  </row>
+  <row>
     <field name="name">TXT_NOTE_FOR_PRODUCT</field>
     <field name="translation">Produkt</field>
   </row>
@@ -7477,12 +7489,20 @@
     <field name="translation">Grupy statusów zamówień</field>
   </row>
   <row>
+    <field name="name">TXT_ORDER_HISTORY</field>
+    <field name="translation">Historia zamówień klienta</field>
+  </row>
+  <row>
     <field name="name">TXT_ORDER_INTERESTING_PRODUCT</field>
     <field name="translation">Inne interesujące produkty</field>
   </row>
   <row>
     <field name="name">TXT_ORDER_LIST</field>
     <field name="translation">Lista zamówień</field>
+  </row>
+  <row>
+    <field name="name">TXT_ORDER_NO</field>
+    <field name="translation">Nr. zamówienia</field>
   </row>
   <row>
     <field name="name">TXT_ORDER_NUMER</field>
@@ -8409,12 +8429,28 @@
     <field name="translation">ID produktu</field>
   </row>
   <row>
+    <field name="name">TXT_PRODUCT_IN_SHOP</field>
+    <field name="translation">Produktów w sklepie</field>
+  </row>
+  <row>
     <field name="name">TXT_PRODUCT_IS_NEW</field>
     <field name="translation">Produkt jest nowością</field>
   </row>
   <row>
     <field name="name">TXT_PRODUCT_LIST</field>
     <field name="translation">Lista produktów</field>
+  </row>
+  <row>
+    <field name="name">TXT_PRODUCT_MARGIN_AVERAGE</field>
+    <field name="translation">Średnia marża</field>
+  </row>
+  <row>
+    <field name="name">TXT_PRODUCT_MARGIN_LOWEST</field>
+    <field name="translation">Najniższa marża</field>
+  </row>
+  <row>
+    <field name="name">TXT_PRODUCT_MARGIN_HIGHEST</field>
+    <field name="translation">Najwyższa marża</field>
   </row>
   <row>
     <field name="name">TXT_PRODUCT_NAME</field>
@@ -8659,6 +8695,10 @@
   <row>
     <field name="name">TXT_QUANTITY_UNIT</field>
     <field name="translation">Ilość sztuk</field>
+  </row>
+  <row>
+    <field name="name">TXT_QUANTITY_UNIT_SHORT</field>
+    <field name="translation">szt.</field>
   </row>
   <row>
     <field name="name">TXT_QUESTIONS</field>
@@ -9160,6 +9200,10 @@
     <field name="name">TXT_SEND_FORM</field>
     <field name="translation">Wypełnij formularz</field>
   </row>
+<row>
+    <field name="name">TXT_SEND_MESSAGE</field>
+    <field name="translation">Wyślij wiadomość</field>
+  </row>
   <row>
     <field name="name">TXT_SEND_NEWSLETTER</field>
     <field name="translation">Wyślij newsletter</field>
@@ -9415,6 +9459,10 @@
   <row>
     <field name="name">TXT_SORT_RESULTS</field>
     <field name="translation">Sortuj według</field>
+  </row>
+  <row>
+    <field name="name">TXT_SORT_RESULTS_SHORTS</field>
+    <field name="translation">Sortuj wg</field>
   </row>
   <row>
     <field name="name">TXT_SPECIFICATIONS</field>
