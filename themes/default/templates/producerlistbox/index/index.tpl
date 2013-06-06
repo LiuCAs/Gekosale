@@ -18,7 +18,7 @@
 	<form class="form-horizontal">
     	<fieldset>
         	<div class="control-group">
-            	<label class="control-label" for="sort">Sortuj wg:</label>
+            	<label class="control-label" for="sort">{% trans %}TXT_SORT_RESULTS_SHORTS{% endtrans %}:</label>
                 <div class="controls">
                 	<select id="sort" class="input-medium" onchange="location.href=this.value">
                     {% for sort in sorting %} 
@@ -30,7 +30,7 @@
 		</fieldset>
 	</form>
     <div class="category-view">
-    	<span>Widok:</span>
+    	<span>{% trans %}TXT_LAYER{% endtrans %}:</span>
     	{% for switch in viewSwitcher %} 
         <a href="{{ switch.link }}#sort" class="{% if switch.type == 1 %}list{% else%}box{% endif %} {% if switch.active == 1 %}active{% endif %}"></a>
         {% endfor %}
