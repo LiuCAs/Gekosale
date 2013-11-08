@@ -227,32 +227,44 @@ class TemplateEditorModel extends Component\Model\Datagrid
 		$theme = array_pop($parts);
 		
 		$dirs = Array();
-		foreach (glob(ROOTPATH . 'themes/*', GLOB_ONLYDIR) as $dir){
-			$i = 0;
-			$dir = basename($dir);
-			if ($dir == $theme){
-				$dirs[$dir] = Array(
-					'name' => $dir,
-					'parent' => NULL,
-					'weight' => 0
-				);
-				foreach (glob(ROOTPATH . 'themes' . DS . $dir . DS . 'templates' . DS . '*', GLOB_ONLYDIR) as $subdir){
-					$j = 0;
-					$subdir = basename($subdir);
-					$dirs[$dir . '.' . $subdir] = Array(
-						'name' => $subdir,
-						'parent' => $dir,
-						'weight' => $i
+		
+		$dirs_found = glob(ROOTPATH . 'themes/*', GLOB_ONLYDIR);
+		if (is_array($dirs_found)){
+			foreach ($dirs_found as $dir){
+				$i = 0;
+				$dir = basename($dir);
+				if ($dir == $theme){
+					$dirs[$dir] = Array(
+						'name' => $dir,
+						'parent' => NULL,
+						'weight' => 0
 					);
-					$i ++;
-					foreach (glob(ROOTPATH . 'themes' . DS . $dir . DS . 'templates' . DS . $subdir . DS . '*', GLOB_ONLYDIR) as $subsubdir){
-						$subsubdir = basename($subsubdir);
-						$dirs[$dir . '.' . $subdir . '.' . $subsubdir] = Array(
-							'name' => $subsubdir,
-							'parent' => $dir . '.' . $subdir,
-							'weight' => $j
-						);
-						$j ++;
+					
+					$subdirs_found = glob(ROOTPATH . 'themes' . DS . $dir . DS . 'templates' . DS . '*', GLOB_ONLYDIR);
+					if (is_array($subdirs_found)){
+						foreach ($subdirs_found as $subdir){
+							$j = 0;
+							$subdir = basename($subdir);
+							$dirs[$dir . '.' . $subdir] = Array(
+								'name' => $subdir,
+								'parent' => $dir,
+								'weight' => $i
+							);
+							$i ++;
+							
+							$subsubdirs_found = glob(ROOTPATH . 'themes' . DS . $dir . DS . 'templates' . DS . $subdir . DS . '*', GLOB_ONLYDIR);
+							if (is_array($subsubdirs_found)){
+								foreach ($subsubdirs_found as $subsubdir){
+									$subsubdir = basename($subsubdir);
+									$dirs[$dir . '.' . $subdir . '.' . $subsubdir] = Array(
+										'name' => $subsubdir,
+										'parent' => $dir . '.' . $subdir,
+										'weight' => $j
+									);
+									$j ++;
+								}
+							}
+						}
 					}
 				}
 			}
