@@ -26,12 +26,12 @@
 		<div class="layout-two-columns">
 		 	
 			<div class="column">
-				<h3><span><strong>Zmień status</strong></span></h3>
+				<h3><span><strong>{% trans %}TXT_CHANGE_STATUS{% endtrans %}</strong></span></h3>
 				{{ statusChange }}
 			</div>
 		 	
 			<div class="column">
-				<h3><span><strong>Dodaj notkę</strong></span></h3>
+				<h3><span><strong>{% trans %}TXT_NOTES_ADD{% endtrans %}</strong></span></h3>
 				{{ addNotes }}
 			</div>
 			
@@ -46,7 +46,7 @@
 		<ul class="changes-detailed">
 		{% for invoice in order.invoices %}
 		<li>
-			<h4><span>{{ invoice.symbol }} - <em>{{ invoice.invoicedate }}</em> <a href="{{ URL }}invoice/view/{{ invoice.idinvoice }},0">ORYGINAŁ</a> | <a href="{{ URL }}invoice/view/{{ invoice.idinvoice }},1">KOPIA</a></span></h4>
+			<h4><span>{{ invoice.symbol }} - <em>{{ invoice.invoicedate }}</em> <a href="{{ URL }}invoice/view/{{ invoice.idinvoice }},0">{% trans %}TXT_ORIGINAL{% endtrans %}</a> | <a href="{{ URL }}invoice/view/{{ invoice.idinvoice }},1">{% trans %}TXT_COPY{% endtrans %}</a></span></h4>
 			{% if invoice.comment !='' %}<p>{% trans %}TXT_COMMENT{% endtrans %}: <strong>{{ invoice.comment }}</strong></p>{% endif %}
 			<p>{% trans %}TXT_MATURITY{% endtrans %}: <strong>{{ invoice.paymentduedate }}</strong></p>
 			<p>{% trans %}TXT_SALES_PERSON{% endtrans %}: <strong>{{ invoice.salesperson }}</strong></p>
@@ -71,8 +71,8 @@
 			{% for change in order.order_history %}
 			<li>
 				<h4><span>{{ change.date }} - <em>{% if change.inform == 1 %}{% trans %}TXT_VIEW_ORDER_CLIENT_INFORMED{% endtrans %}{% else %}{% trans %}TXT_VIEW_ORDER_CLIENT_NOT_INFORMED{% endtrans %}{% endif %}</em></span></h4>
-				{% if change.orderstatusname is defined %}<p>status: <strong>{{ change.orderstatusname }}</strong></p>{% endif %}
-				{% if change.content is defined %}<p>Komentarz: <strong>{{ change.content }}</strong></p>{% endif %}
+				{% if change.orderstatusname is defined %}<p>{% trans %}TXT_STATUS{% endtrans %}: <strong>{{ change.orderstatusname }}</strong></p>{% endif %}
+				{% if change.content is defined %}<p>{% trans %}TXT_COMMENT{% endtrans %}: <strong>{{ change.content }}</strong></p>{% endif %}
 				{% if change.user != '' %}<p class="author">{% trans %}TXT_VIEW_ORDER_CHANGE_AUTHOR{% endtrans %}: <strong>{{ change.user }}</strong></p>{% endif %}
 			</li>
 			{% endfor %}
@@ -90,7 +90,7 @@
 			{% for ordernote in orderNotes %}
 			<li>
 				<h4><span>{{ ordernote.adddate }}</span></h4>
-				{% if ordernote.content is defined %}<p>Komentarz: <strong>{{ ordernote.content }}</strong></p>{% endif %}
+				{% if ordernote.content is defined %}<p>{% trans %}TXT_COMMENT{% endtrans %}: <strong>{{ ordernote.content }}</strong></p>{% endif %}
 				<p class="author">{% trans %}TXT_VIEW_ORDER_CHANGE_AUTHOR{% endtrans %}: <strong>{{ ordernote.user }}</strong></p>
 			</li>
 			{% endfor %}
@@ -108,7 +108,7 @@
 			{% for history in clientOrderHistory %}
 			<li>
 				<h4><span>{{ history.adddate }}</span></h4>
-				<p>Nr. zamówienia:  <strong><a href="{{ URL }}order/edit/{{ history.idorder }}">#{{ history.idorder }}</a></strong></p>
+				<p>{% trans %}TXT_ORDER_NO{% endtrans %}:  <strong><a href="{{ URL }}order/edit/{{ history.idorder }}">#{{ history.idorder }}</a></strong></p>
 				<p class="author">{% trans %}TXT_ALL_ORDERS_PRICE{% endtrans %}: <strong>{{ history.globalprice }}</strong>{{ currencysymbol }}</p>
 			</li>
 			{% endfor %}
