@@ -67,7 +67,7 @@
 			<td align="left">
 				<table border="1">
 					<tr>
-						<td align="center" width="5%"><small><b>Lp.</b></small></td>
+						<td align="center" width="5%"><small><b>{% trans %}TXT_ORDINAL_NUMEREL_SHORT{% endtrans %}</b></small></td>
 						<td align="left" width="30%"><small><b>{% trans %}TXT_PRODUCT_NAME{% endtrans %}</b></small></td>
 						<td align="center" width="15%"><small><b>{% trans %}TXT_UNIT_MEASURE{% endtrans %}</b></small></td>
 						<td align="center" width="5%"><small><b>{% trans %}TXT_PRODUCT_QUANTITY{% endtrans %}</b></small></td>
@@ -84,7 +84,7 @@
 							<br />{{ product.attributes.name }}
 						{% endif %}
 						</small></font></td>
-						<td align="center" width="15%"><font color="grey"><small>szt.</small></font></td>
+						<td align="center" width="15%"><font color="grey"><small>{% trans %}TXT_QUANTITY_UNIT_SHORT{% endtrans %}</small></font></td>
 						<td align="center" width="5%"><font color="grey"><small>{{ product.quantity }}</small></font></td>
 						<td align="center" width="10%"><font color="grey"><small>{{ product.vat }} %</small></font></td>
 						<td align="center" width="10%"><font color="grey"><small>{{ product.net_subtotal|priceFormat }}</small></font></td>
