@@ -43,10 +43,10 @@ class LayeredNavigationBoxModel extends Component\Model
 		$stmt->bindValue('id', $id);
 		$stmt->execute();
 		while ($rs = $stmt->fetch()){
-			$Data[$rs['attributegroupid']]['name'] = $rs['attributegroupname'];
+			$Data[$rs['attributegroupid']]['name'] = _($rs['attributegroupname']);
 			$Data[$rs['attributegroupid']]['attributes'][$rs['attributeid']] = Array(
 				'id' => $rs['attributeid'],
-				'name' => $rs['attributename']
+				'name' => _($rs['attributename'])
 			);
 		}
 		foreach ($Data as $key => $val){
@@ -75,10 +75,10 @@ class LayeredNavigationBoxModel extends Component\Model
 		$stmt->bindValue('ids', implode(',', $ids));
 		$stmt->execute();
 		while ($rs = $stmt->fetch()){
-			$Data[$rs['attributegroupid']]['name'] = $rs['attributegroupname'];
+			$Data[$rs['attributegroupid']]['name'] = _($rs['attributegroupname']);
 			$Data[$rs['attributegroupid']]['attributes'][$rs['attributeid']] = Array(
 				'id' => $rs['attributeid'],
-				'name' => $rs['attributename']
+				'name' => _($rs['attributename'])
 			);
 		}
 		return $Data;
