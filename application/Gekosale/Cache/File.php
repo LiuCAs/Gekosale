@@ -68,7 +68,7 @@ class File
 	public function deleteAll ()
 	{
 		$files_found = glob($this->path . '*' . $this->suffix);
-		if (is_array($var)){
+		if (is_array($files_found)){
 			foreach ($files_found as $fn){
 				@unlink($fn);
 			}
